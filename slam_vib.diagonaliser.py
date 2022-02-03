@@ -9,14 +9,33 @@ kd = lambda i,j : 1. if (i==j) else 0.
 class slam_vib_dig:
 
 	def __init__(self,*argv):
-		
-		self.number_of_atoms = int(argv[0])
-		self.delta	     = float(argv[1])
+		#DEBUG?
+		self.number_of_atoms = int(argv[0])			# GET NUMBER OF CORES IN THE CLUSTER
+		self.delta	     = float(argv[1])*2.		# Mult "2" > */2dx
+		#self.number_of_atoms = int(argv[1])			# GET NUMBER OF CORES IN THE CLUSTER
+		#self.delta	     = float(argv[2])
 		self.main_config_file= "geo.txt"
 		self.main_config     = None
 		self.main_config_type= None		
 
-		self.wavenumber_conv=5.8921E-5
+		#self.wavenumber_conv=5.8921E-5				# COV FACTOR INTO cm-1	... 2.71918.E+05? .. or 1./3.67758.E-06
+		self.wavenumber_conv=3.67758E-06			# COV FACTOR INTO cm-1	(factor itself is in 'cm^2' unit : used for division
+
+		# conversion factor  ...
+		'''
+			Unit of internal hessian elements are : eV / amu / angs^2 (also the eigenvalues)
+			it has to be converted into (cm-1) unit.
+
+			using relation 4 pi^2 c^2 v'^2 = (eval)
+
+			v'^2 = (eval) / (4 pi^2 c^2 )	: unit of eval is eV / angs / angs /amum, unit of denominator (cm-2)(s^2)
+
+			eV / angs / angs / amu <=> const * N (eV/angs) m-1 (/angs) kg-1 (/amu)
+
+						<=> kg m / s^2 * m-1 * kg-1 * const <=> const (1/s^2)
+
+		'''
+
 
 		self.cla_cnt = 0;	self.sp_cnt = 0			# ATOM SPECIES COUNT
 
@@ -58,8 +77,33 @@ class slam_vib_dig:
 				self.sp_cnt  = int(spl[1])
 
 				self.main_config      = np.matrix( [[ 0. for i in range(3) ] for j in range(self.number_of_atoms)] )	# CREAT ARR TO SAVE MAIN CONFIG WITH ATOM NAMES
-				self.main_config_type = [ None for i in range(self.number_of_atoms) ]
+				self.main_config_type = [ None for i in range(self.number_of_atoms) ]					# SAVE ELEMENT TYPE
 
+
+				cnt=0
+
+				for i in range(self.cla_cnt + self.sp_cnt):
+					if i < self.cla_cnt:
+						rl = f.readline()
+						spl= rl.split()
+
+						if spl[1] == 'c' :
+							self.main_config_type[cnt] = spl[0]
+							self.main_config.itemset((cnt,0),spl[2])		# X
+							self.main_config.itemset((cnt,1),spl[3])		# Y
+							self.main_config.itemset((cnt,2),spl[4])		# Z
+							cnt += 1
+					else:
+
+						rl = f.readline()
+						spl= rl.split()
+						self.main_config_type[cnt] = spl[0]
+						self.main_config.itemset((cnt,0),spl[1])		# X
+						self.main_config.itemset((cnt,1),spl[2])		# Y
+						self.main_config.itemset((cnt,2),spl[3])		# Z
+						cnt += 1
+				#print(self.main_config)
+				'''
 				for i in range(self.number_of_atoms):
 					if i < self.cla_cnt :
 						rl = f.readline()	
@@ -75,6 +119,7 @@ class slam_vib_dig:
 						self.main_config.itemset((i,0),spl[1])		# X
 						self.main_config.itemset((i,1),spl[2])		# Y
 						self.main_config.itemset((i,2),spl[3])		# Z
+				'''
 			
 		except FileNotFoundError:
 			print(FileNotFoundError);	sys.exit(1)
@@ -104,11 +149,16 @@ class slam_vib_dig:
 			rsq = np.array( self.main_config_shift.item((i,0))**2. + self.main_config_shift.item((i,1))**2.	# GET R^2
 						+ self.main_config_shift.item((i,2))**2. ) 				#
 			m   = self.atomic_mass_dic[ self.main_config_type[i] ]						# GET ATOMIC MASS
+			#print(self.main_config_type[i],m,rsq)
+
+			#self.intertial_tensor.itemset((0,0), self.inertia_tensor.item((0,0)) + m*( rsq - self.main_config_shift.item((i,0))*self.main_config_shift.item((i,0)) ))
+
+			# I_jk = sum_i ( rsq_i * kd_jk - r_i;j * r_i;k )*m_i			
 
 			for j in range(3):
 				for k in range(3):
 					self.inertia_tensor.itemset((j,k), self.inertia_tensor.item((j,k)) 
-						+ m*( rsq*kd(j,k) - self.main_config_shift.item((i,j))*self.main_config_shift.item((i,k)) ))
+						+ m*( float(rsq)*kd(j,k) - self.main_config_shift.item((i,j))*self.main_config_shift.item((i,k)) ))
 		# COMPUTE INERTIA TENSOR DONE
 		self.inertia_tensor_eval, self.inertia_tensor_evec = np.linalg.eig( self.inertia_tensor )	
 
@@ -157,17 +207,17 @@ class slam_vib_dig:
 		for i in range(self.number_of_atoms):
 
 			# D4
-			self.tf_matrix_ws.itemset((i*3 + 0, 3) , ((P_y.item(i)*X_x.item(2) - P_z.item(i)*X_x.item(1)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
-			self.tf_matrix_ws.itemset((i*3 + 1, 3) , ((P_y.item(i)*X_y.item(2) - P_z.item(i)*X_y.item(1)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
-			self.tf_matrix_ws.itemset((i*3 + 2, 3) , ((P_y.item(i)*X_z.item(2) - P_z.item(i)*X_z.item(1)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 0, 3) , ((P_y.item(i)*X_x.item(2) - P_z.item(i)*X_x.item(1)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 1, 3) , ((P_y.item(i)*X_y.item(2) - P_z.item(i)*X_y.item(1)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 2, 3) , ((P_y.item(i)*X_z.item(2) - P_z.item(i)*X_z.item(1)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
 			# D5
-			self.tf_matrix_ws.itemset((i*3 + 0, 4) , ((P_z.item(i)*X_x.item(0) - P_x.item(i)*X_x.item(2)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
-			self.tf_matrix_ws.itemset((i*3 + 1, 4) , ((P_z.item(i)*X_y.item(0) - P_x.item(i)*X_y.item(2)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
-			self.tf_matrix_ws.itemset((i*3 + 2, 4) , ((P_z.item(i)*X_z.item(0) - P_x.item(i)*X_z.item(2)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 0, 4) , ((P_z.item(i)*X_x.item(0) - P_x.item(i)*X_x.item(2)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 1, 4) , ((P_z.item(i)*X_y.item(0) - P_x.item(i)*X_y.item(2)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 2, 4) , ((P_z.item(i)*X_z.item(0) - P_x.item(i)*X_z.item(2)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
 			# D6
-			self.tf_matrix_ws.itemset((i*3 + 0, 5) , ((P_x.item(i)*X_x.item(1) - P_y.item(i)*X_x.item(0)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
-			self.tf_matrix_ws.itemset((i*3 + 1, 5) , ((P_x.item(i)*X_y.item(1) - P_y.item(i)*X_y.item(0)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
-			self.tf_matrix_ws.itemset((i*3 + 2, 5) , ((P_x.item(i)*X_z.item(1) - P_y.item(i)*X_z.item(0)))/np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 0, 5) , ((P_x.item(i)*X_x.item(1) - P_y.item(i)*X_x.item(0)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 1, 5) , ((P_x.item(i)*X_y.item(1) - P_y.item(i)*X_y.item(0)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			self.tf_matrix_ws.itemset((i*3 + 2, 5) , ((P_x.item(i)*X_z.item(1) - P_y.item(i)*X_z.item(0)))*np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
 
 
 		self.D, self.R = np.linalg.qr(self.tf_matrix_ws)	# ORTHONORMALISATION OF THE MATRIX 'D' (FOR TRANSFORMATION)
@@ -275,7 +325,9 @@ class slam_vib_dig:
 					if abs(symm_checker) >= self.symm_checker_tol :
 						print("\n")
 						print(" @WARNING!!! : Hessian element (%2d , %2d) is not strictly symmetric !" % (i+1,j+1))
-						print(" D/TOL       : %12.9f/%12.9f" % (symm_checker,self.symm_checker_tol) )
+						print(" D/TOL       : %12.9f / %12.9f" % (symm_checker,self.symm_checker_tol) )
+						print(" Elem1/Elem2 : %12.9f / %12.9f" % (self.hessian.item((i,j)),self.hessian.item((j,i))))
+						print(" Err	    : %12.9f" % (abs(symm_checker)/abs((self.hessian.item((j,i))+self.hessian.item((i,j)))/2.)*100.))
 						print("\n")
 					f.write("%14.6e" % self.hessian.item((i,j)))						#
 				f.write("\n")											#
@@ -366,6 +418,32 @@ class slam_vib_dig:
 
 			print("%12.6lf%6s" % (self.mode_wn_int.item(i),"cm-1"))
 		'''
+	def get_vib_direction_mat(self):
+		
+		stride = self.number_of_atoms*3
+
+		m_matrix = np.array( [[0. for i in range(stride)] for j in range(stride)] )
+
+		for i in range(self.number_of_atoms):
+			m_matrix.itemset((i*3+0,i*3+0),1./np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			m_matrix.itemset((i*3+1,i*3+1),1./np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+			m_matrix.itemset((i*3+2,i*3+2),1./np.sqrt( self.atomic_mass_dic[ self.main_config_type[i] ] ))
+		
+		# calculate M * D * L : M (to mwc H), D (to int H), L (to find NMs)
+
+		tmp = np.dot(m_matrix,self.D)
+		self.vib_dir_mat = np.dot(tmp,self.vec_int)
+
+		# normalise the raw displacements in cartesian coordinate
+
+		for i in range(self.number_of_atoms*3):
+			tmp_sum = 0.
+			for j in range(self.number_of_atoms*3):
+				tmp_sum += self.vib_dir_mat.item((j,i))**2.		# for 'i'th mode, displacements of atoms in 'j' row elements
+			normalisation_factor = 1./np.sqrt(tmp_sum)			# get normalisation factor
+
+			for j in range(self.number_of_atoms*3):
+				self.vib_dir_mat.itemset((j,i), self.vib_dir_mat.item((j,i))*normalisation_factor)	# Normalise
 
 	def res_write(self):
 
@@ -379,17 +457,151 @@ class slam_vib_dig:
 				self.mode_wn_int.itemset(i, +1.*np.sqrt( self.mode_int.item(i)/(self.wavenumber_conv) ) )		
 			print("%3.2d%17.6lf" % (i+1,self.mode_wn_int.item(i)))
 		print("--------------------------------------------------------------------------------------")
+		print("")
+		print(" Moment of inertia tensor ( u.Angs^2 )")
+		print("")
+		print("--------------------------------------------------------------------------------------")
+		print("	     x       y      z")
+		print("--------------------------------------------------------------------------------------")
+		print(" %3s%10.3f%10.3f%10.3f" % ("x",self.inertia_tensor_eval.item((0)),0,0))
+		print(" %3s%10.3f%10.3f%10.3f" % ("y",0,self.inertia_tensor_eval.item((1)),0))
+		print(" %3s%10.3f%10.3f%10.3f" % ("z",0,0,self.inertia_tensor_eval.item((2))))
+		print("--------------------------------------------------------------------------------------")
+		print(" Centre of mass (Ang) = %10.4f%10.4f%10.4f" % ( self.com.item((0)), self.com.item((1)), self.com.item((2)) ) )
+		print("--------------------------------------------------------------------------------------")
+
+		
 
 		try: 
+			with open("vib_displ.out","w") as f:
+			
+				stride = self.number_of_atoms*3
+
+				for i in range(stride):					# FOR THIS NUMBER OF MODES
+					f.write("\t%d\n" % (self.number_of_atoms))
+					f.write("normal_mode_# %d - Freq(cm^-1): %8.4f\n" % (i+1,self.mode_wn_int.item(i)))
+
+					for j in range(self.number_of_atoms):
+						f.write("%3s%10.6f%10.6f%10.6f\n" % (self.main_config_type[j], self.vib_dir_mat.item((j*3+0,i)),self.vib_dir_mat.item((j*3+1,i)),self.vib_dir_mat.item((j*3+2,i))))
+
+					f.write("\n#--\n\n")
+					
+			'''
 			with open("vib_evec.out","w") as f:
 				f.write(" # normal mode corresponding eigenvectors (same order with frequencies)\n")
 				for i in range(len(self.mode_int)):
 					for j in range(len(self.mode_int)):
 						f.write("%18.6e" % (self.vec_int.item((i,j))) )
 					f.write("\n")
+			'''
 		except FileNotFoundError:
 			print(FileNotFoundError);	sys.exit(1)
 	
+
+
+
+	def write(self):			# WRITE GENERAL OUTPUT
+
+	# write '.vesta' dipole vector file
+
+		with open("slam_dip.vesta","w") as f:
+
+			f.write("#VESTA_FORMAT_VERSION 3.3.0\n")
+			f.write("MOLECULE\n")
+			f.write("TITLE\n")
+			f.write(" SLAM_DIPOLE\n")
+			f.write("STRUC\n")		# STRUCTURE
+
+			cnt=0
+			offset_cnt=0
+			for i in range(self.mm_cnt):
+
+				if self.mm_config[i][1] == "c":
+					cnt += 1
+					offset_cnt += 1
+					atom_label = self.mm_config[i][0] + str(cnt)
+					f.write("%3d%6.3s%10.4s%12s" % (cnt,self.mm_config[i][0],atom_label,"1.0000"))
+					f.write("%12.6f%12.6f%12.6f" % (self.mm_config[i][3],self.mm_config[i][4],self.mm_config[i][5]))
+					f.write("%12s%12.2s\n" % ("1","-"))
+					f.write("%21.6f%12.6f%12.6f%12.2f\n" % (0.,0.,0.,0.))
+
+			cnt=0
+			for i in range(self.qm_cnt):
+				cnt += 1
+				atom_label = self.qm_config[i][0] + str(cnt)
+				f.write("%3d%6.3s%10.4s%12s" % (cnt+offset_cnt,self.qm_config[i][0],atom_label,"1.0000"))
+				f.write("%12.6f%12.6f%12.6f" % (self.qm_config[i][3],self.qm_config[i][4],self.qm_config[i][5]))
+				f.write("%12s%12.2s\n" % ("1","-"))
+				f.write("%21.6f%12.6f%12.6f%12.2f\n" % (0.,0.,0.,0.))
+		
+			f.write("    0 0 0 0 0 0 0\n")	# END FLAG
+			# END OF WRITING STRUC		
+
+			# BOND INFO
+			f.write("SBOND\n")
+			f.write("%3d%6.3s%6.3s%70s\n" % (1,self.mm_config[0][0],self.qm_config[0][0],"0.00000    2.82146  0  1  1  0  1  0.250  2.000 127 127 127"))
+			f.write("    0 0 0 0\n")
+
+			# WRITE VECTOR
+			f.write("VECTR\n")
+
+			v_cnt=0
+			for i in range(self.mm_cnt):
+
+				if self.mm_config[i][1] == "c":
+					v_cnt += 1
+				if self.mm_config[i][1] == "s":
+				#	v_cnt += 1
+
+					rx = self.mm_config[i][3] - self.mm_config[i-1][3]
+					ry = self.mm_config[i][4] - self.mm_config[i-1][4]
+					rz = self.mm_config[i][5] - self.mm_config[i-1][5]
+
+					ux = rx*self.mm_config[i][2]*self.v_mod
+					uy = ry*self.mm_config[i][2]*self.v_mod
+					uz = rz*self.mm_config[i][2]*self.v_mod
+
+					ux=ux*-1; uy=uy*-1.; uz=uz*-1.			
+
+					amp = math.sqrt(ux*ux + uy*uy + uz*uz)
+					scl = math.exp(-amp/self.v_rho)
+					ux = ux*scl
+					uy = uy*scl
+					uz = uz*scl
+
+					f.write("%3d%15.6f%12.6f%12.6f%12.1d\n" % (v_cnt,ux,uy,uz,0))
+					f.write("%3d" % (v_cnt))
+					f.write("    0 0 0 0\n")
+					f.write(" 0 0 0 0 0\n")
+
+			for i in range(self.qm_cnt):
+
+				v_cnt += 1
+				ux = 2.*self.mo_config[i][2]*self.mo_config[i][3]*self.pos_integral*self.qm_config[i][2]*self.v_mod
+				uy = 2.*self.mo_config[i][2]*self.mo_config[i][4]*self.pos_integral*self.qm_config[i][2]*self.v_mod
+				uz = 2.*self.mo_config[i][2]*self.mo_config[i][5]*self.pos_integral*self.qm_config[i][2]*self.v_mod
+
+				ux=ux*-1; uy=uy*-1.; uz=uz*-1.			
+
+				amp = math.sqrt(ux*ux + uy*uy + uz*uz)
+				scl = math.exp(-amp/self.v_rho)
+				ux = ux*scl
+				uy = uy*scl
+				uz = uz*scl
+
+				f.write("%3d%15.6f%12.6f%12.6f%12.1d\n" % (v_cnt,ux,uy,uz,0))
+				f.write("%3d" % (v_cnt))
+				f.write("    0 0 0 0\n")
+				f.write(" 0 0 0 0 0\n")
+			f.write("    0 0 0 0 0\n")
+			f.write("    0 0 0 0 0\n")
+			# END WRITING VECTOR
+
+			f.write("VECTT\n")
+			# VECTOR FORMAT
+			for i in range(v_cnt):
+				f.write("%3d%9.3f%12d%12d%12d%12.3s\n" % (i+1,self.v_radius,self.v_rgb_r,self.v_rgb_g,self.v_rgb_b,self.v_tail_flag))
+			f.write(" 0 0 0 0 0\n")
 
 if __name__ == '__main__':
 
@@ -400,8 +612,11 @@ if __name__ == '__main__':
 	dig.build_hessian()
 	dig.build_mwc_hessian()
 	dig.build_int_hessian()
+	dig.get_vib_direction_mat()
 	dig.res_write()
 	now = datetime.datetime.now()
-	print(" Calculation is finished : ",end="");	print (now.strftime("%Y-%m-%d %H:%M:%S"))
+	#print(" Calculation is finished : ",end="");	print (now.strftime("%Y-%m-%d %H:%M:%S"))
+	print(" Calculation is finished : ")
+	print(now.strftime(" %Y-%m-%d %H:%M:%S"))
 	print(" Terminating Normal Mode Calculator")
 	print("--------------------------------------------------------------------------------------")

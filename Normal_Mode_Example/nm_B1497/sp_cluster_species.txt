@@ -1,0 +1,66 @@
+QM_PFT  2
+F       122.   0.089
+Pb      422.   422.0   0.098   0.098
+ATFM_TYPE 2
+SHELL   F       0.59    -1.59   20.77   0.
+SP      Pb      3.64    -1.64   14.09
+MM_PFT  2
+SHELL   F       SHELL   F       1127.7  0.2753   -15.83
+SP      Pb      SHELL   F       4494.   0.264   -20.4
+gnorm_tol 0.000005
+#log_limit
+
+
+
+
+QM_PFT  2
+F       122.   0.089
+Pb      422.   422.0   0.098   0.098
+ATFM_TYPE 2
+SHELL   F       0.59    -1.59   20.77	0.
+SP      Pb      3.64    -1.64   14.09
+MM_PFT  2
+SHELL   F       SHELL   F       1127.7  0.2753   -15.83
+SP      Pb      SHELL   F       4494.   0.264   -20.4
+gnorm_tol 0.0001
+log_limit
+
+
+
+
+
+QM_PFT  2
+F       304.   0.089
+Pb      422.   422.0   0.098   0.098
+ATFM_TYPE 2
+SHELL   F       0.59    -1.59   20.77       0.
+SP      Pb      3.64    -1.64   14.09
+MM_PFT  2
+SHELL   F       SHELL   F       1127.7  0.2753   -15.83
+SP	Pb	SHELL	F	1294.	0.314	0.
+gnorm_tol 0.00005
+#log_limit
+SP	Pb	SHELL	F	594.	0.364	0.
+
+
+
+
+
+
+
+
+
+
+
+# THIS IS POT USED FOR PbO
+QM_POT  2
+O       479.   0.098
+Pb      422.   422.0   0.098   0.098
+ATOM_TYPE 2
+SHELL   O       0.04   -2.04  6.3       19.845
+SP      Pb      3.64    -1.64   14.09
+MM_POT  2
+SHELL   O       SHELL   O       9547.96         0.2192          -32.32
+SP      Pb      SHELL   O       3035.  0.301     0.
+gnorm_tol 0.00005
+#log_limit
