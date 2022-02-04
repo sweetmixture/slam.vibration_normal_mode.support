@@ -1,0 +1,10 @@
+# In 'vibres.out' see mode "30" has imaginary frequency
+# possibly the initial configuration 'geo.txt' is on saddle point
+# try pushing the atoms in the configuration toward corresponding direction, showing imaginary freqency, and optimise again!
+
+# $ bash apply_displs.sh 30
+#
+# possible outputs
+#
+# Add calculated displacements correspnding to NormalModel #30 with imaginary freqnecy.
+# 'geo.txt.displ' (displaced atomic config - output)

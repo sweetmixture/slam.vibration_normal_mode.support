@@ -5,7 +5,7 @@
  last edited  : 31 - 08 -2020
 --------------------------------------------------------------------------------------
 
- Requested 'dx' value is used :     0.025000
+ Requested 'dx' value is used :     0.050000
 
  READ CHECK DONE ...
 
@@ -14,29 +14,29 @@
 --------------------------------------------------------------------------------------
 
  F c    1.754566    0.007656    1.831569
- F s    1.787357    0.134462    1.879708
+ F s    1.787357    0.134461    1.879708
  F c    1.652379    5.256600    2.808706
  F s    1.691337    5.187951    2.693658
  F c    0.553666    2.112360    0.430535
- F s    0.636660    2.192269    0.497224
- F c    4.698429    3.251397    1.126826
- F s    4.647491    3.282344    1.229525
- F c    3.663010    1.260568    4.455428
- F s    3.637722    1.295818    4.345743
- F c    0.032988    2.609663    3.366903
- F s    0.124034    2.601788    3.292252
+ F s    0.636661    2.192269    0.497224
+ F c    4.698429    3.251398    1.126825
+ F s    4.647491    3.282345    1.229525
+ F c    3.663010    1.260568    4.455429
+ F s    3.637721    1.295818    4.345743
+ F c    0.032988    2.609662    3.366903
+ F s    0.124035    2.601788    3.292252
  F c    2.531373    2.569628    2.418751
- F s    2.508243    2.480584    2.385058
- F c    4.467801    0.653127    1.605922
- F s    4.431752    0.777621    1.636715
- F c    2.214214    4.180140    0.381814
+ F s    2.508243    2.480584    2.385057
+ F c    4.467801    0.653128    1.605922
+ F s    4.431751    0.777621    1.636715
+ F c    2.214214    4.180141    0.381814
  F s    2.214935    4.191897    0.500306
  F c    4.527537    4.188516    3.667567
  F s    4.517187    4.137805    3.538039
 Pb      5.210620    2.111058    3.103582
-Pb      1.537590    1.010099    3.799632
-Pb      2.733707    1.476968    0.392332
-Pb      0.238790    3.962272    1.613429
+Pb      1.537590    1.010099    3.799633
+Pb      2.733706    1.476967    0.392332
+Pb      0.238791    3.962272    1.613429
 Pb      3.667936    5.152243    1.837798
 
 --------------------------------------------------------------------------------------
@@ -75,68 +75,1220 @@ Pb      3.667936    5.152243    1.837798
 
 
 
+ @WARNING!!! : Hessian element ( 1 ,  3) is not strictly symmetric !
+ D/TOL       : -0.008149200 /  0.005000000
+ Elem1/Elem2 : -1.754248400 / -1.746099200
+ Err	    :  0.465622328
+
+
+
+
+ @WARNING!!! : Hessian element ( 2 , 36) is not strictly symmetric !
+ D/TOL       : -0.006364000 /  0.005000000
+ Elem1/Elem2 : -2.689280000 / -2.682916000
+ Err	    :  0.236923597
+
+
+
+
+ @WARNING!!! : Hessian element ( 3 ,  1) is not strictly symmetric !
+ D/TOL       :  0.008149200 /  0.005000000
+ Elem1/Elem2 : -1.746099200 / -1.754248400
+ Err	    :  0.465622328
+
+
+
+
+ @WARNING!!! : Hessian element ( 3 , 35) is not strictly symmetric !
+ D/TOL       :  0.010903000 /  0.005000000
+ Elem1/Elem2 : -2.657904000 / -2.668807000
+ Err	    :  0.409370811
+
+
+
+
+ @WARNING!!! : Hessian element ( 3 , 36) is not strictly symmetric !
+ D/TOL       :  0.006902000 /  0.005000000
+ Elem1/Elem2 : -6.926828000 / -6.933730000
+ Err	    :  0.099591950
+
+
+
+
+ @WARNING!!! : Hessian element ( 3 , 37) is not strictly symmetric !
+ D/TOL       : -0.005985500 /  0.005000000
+ Elem1/Elem2 :  1.083362100 /  1.089347600
+ Err	    :  0.550970983
+
+
+
+
+ @WARNING!!! : Hessian element ( 3 , 38) is not strictly symmetric !
+ D/TOL       : -0.005477600 /  0.005000000
+ Elem1/Elem2 :  1.623926300 /  1.629403900
+ Err	    :  0.336738029
+
+
+
+
+ @WARNING!!! : Hessian element ( 3 , 39) is not strictly symmetric !
+ D/TOL       :  0.007751000 /  0.005000000
+ Elem1/Elem2 : -2.611114000 / -2.618865000
+ Err	    :  0.296406544
+
+
+
+
+ @WARNING!!! : Hessian element ( 4 ,  6) is not strictly symmetric !
+ D/TOL       :  0.005154800 /  0.005000000
+ Elem1/Elem2 : -0.843578400 / -0.848733200
+ Err	    :  0.609202230
+
+
+
+
+ @WARNING!!! : Hessian element ( 4 , 40) is not strictly symmetric !
+ D/TOL       :  0.005488000 /  0.005000000
+ Elem1/Elem2 : -3.308236000 / -3.313724000
+ Err	    :  0.165751530
+
+
+
+
+ @WARNING!!! : Hessian element ( 4 , 42) is not strictly symmetric !
+ D/TOL       :  0.006549500 /  0.005000000
+ Elem1/Elem2 : -1.943077800 / -1.949627300
+ Err	    :  0.336501216
+
+
+
+
+ @WARNING!!! : Hessian element ( 4 , 43) is not strictly symmetric !
+ D/TOL       :  0.006052000 /  0.005000000
+ Elem1/Elem2 : -5.773829000 / -5.779881000
+ Err	    :  0.104762886
+
+
+
+
+ @WARNING!!! : Hessian element ( 4 , 45) is not strictly symmetric !
+ D/TOL       : -0.012709000 /  0.005000000
+ Elem1/Elem2 :  2.524642000 /  2.537351000
+ Err	    :  0.502134238
+
+
+
+
+ @WARNING!!! : Hessian element ( 6 ,  4) is not strictly symmetric !
+ D/TOL       : -0.005154800 /  0.005000000
+ Elem1/Elem2 : -0.848733200 / -0.843578400
+ Err	    :  0.609202230
+
+
+
+
+ @WARNING!!! : Hessian element ( 6 , 43) is not strictly symmetric !
+ D/TOL       :  0.008699000 /  0.005000000
+ Elem1/Elem2 :  2.596960000 /  2.588261000
+ Err	    :  0.335530540
+
+
+
+
+ @WARNING!!! : Hessian element ( 7 , 38) is not strictly symmetric !
+ D/TOL       : -0.010473000 /  0.005000000
+ Elem1/Elem2 :  1.499499900 /  1.509972900
+ Err	    :  0.696002303
+
+
+
+
+ @WARNING!!! : Hessian element ( 8 ,  9) is not strictly symmetric !
+ D/TOL       : -0.006353000 /  0.005000000
+ Elem1/Elem2 :  3.050861000 /  3.057214000
+ Err	    :  0.208019712
+
+
+
+
+ @WARNING!!! : Hessian element ( 8 , 37) is not strictly symmetric !
+ D/TOL       :  0.008360500 /  0.005000000
+ Elem1/Elem2 :  1.023622700 /  1.015262200
+ Err	    :  0.820105147
+
+
+
+
+ @WARNING!!! : Hessian element ( 8 , 42) is not strictly symmetric !
+ D/TOL       :  0.007132000 /  0.005000000
+ Elem1/Elem2 : -3.040089000 / -3.047221000
+ Err	    :  0.234323535
+
+
+
+
+ @WARNING!!! : Hessian element ( 9 ,  8) is not strictly symmetric !
+ D/TOL       :  0.006353000 /  0.005000000
+ Elem1/Elem2 :  3.057214000 /  3.050861000
+ Err	    :  0.208019712
+
+
+
+
+ @WARNING!!! : Hessian element ( 9 , 41) is not strictly symmetric !
+ D/TOL       : -0.006730000 /  0.005000000
+ Elem1/Elem2 : -3.012948000 / -3.006218000
+ Err	    :  0.223619020
+
+
+
+
+ @WARNING!!! : Hessian element (10 , 11) is not strictly symmetric !
+ D/TOL       : -0.010527200 /  0.005000000
+ Elem1/Elem2 : -2.133583200 / -2.123056000
+ Err	    :  0.494624961
+
+
+
+
+ @WARNING!!! : Hessian element (10 , 12) is not strictly symmetric !
+ D/TOL       :  0.005703900 /  0.005000000
+ Elem1/Elem2 : -0.442858400 / -0.448562300
+ Err	    :  1.279732454
+
+
+
+
+ @WARNING!!! : Hessian element (10 , 13) is not strictly symmetric !
+ D/TOL       : -0.005300900 /  0.005000000
+ Elem1/Elem2 :  0.316052300 /  0.321353200
+ Err	    :  1.663274007
+
+
+
+
+ @WARNING!!! : Hessian element (10 , 33) is not strictly symmetric !
+ D/TOL       : -0.006984000 /  0.005000000
+ Elem1/Elem2 : -0.583425300 / -0.576441300
+ Err	    :  1.204276423
+
+
+
+
+ @WARNING!!! : Hessian element (10 , 44) is not strictly symmetric !
+ D/TOL       :  0.005821600 /  0.005000000
+ Elem1/Elem2 :  1.669328100 /  1.663506500
+ Err	    :  0.349348269
+
+
+
+
+ @WARNING!!! : Hessian element (11 , 10) is not strictly symmetric !
+ D/TOL       :  0.010527200 /  0.005000000
+ Elem1/Elem2 : -2.123056000 / -2.133583200
+ Err	    :  0.494624961
+
+
+
+
+ @WARNING!!! : Hessian element (11 , 12) is not strictly symmetric !
+ D/TOL       : -0.012410410 /  0.005000000
+ Elem1/Elem2 :  0.099581950 /  0.111992360
+ Err	    : 11.731490463
+
+
+
+
+ @WARNING!!! : Hessian element (11 , 33) is not strictly symmetric !
+ D/TOL       :  0.008392100 /  0.005000000
+ Elem1/Elem2 :  0.790056600 /  0.781664500
+ Err	    :  1.067886663
+
+
+
+
+ @WARNING!!! : Hessian element (11 , 43) is not strictly symmetric !
+ D/TOL       : -0.008319400 /  0.005000000
+ Elem1/Elem2 :  1.435503000 /  1.443822400
+ Err	    :  0.577871469
+
+
+
+
+ @WARNING!!! : Hessian element (11 , 44) is not strictly symmetric !
+ D/TOL       :  0.006021000 /  0.005000000
+ Elem1/Elem2 : -4.410206000 / -4.416227000
+ Err	    :  0.136431104
+
+
+
+
+ @WARNING!!! : Hessian element (11 , 45) is not strictly symmetric !
+ D/TOL       :  0.009081100 /  0.005000000
+ Elem1/Elem2 : -1.304865700 / -1.313946800
+ Err	    :  0.693528078
+
+
+
+
+ @WARNING!!! : Hessian element (12 , 10) is not strictly symmetric !
+ D/TOL       : -0.005703900 /  0.005000000
+ Elem1/Elem2 : -0.448562300 / -0.442858400
+ Err	    :  1.279732454
+
+
+
+
+ @WARNING!!! : Hessian element (12 , 11) is not strictly symmetric !
+ D/TOL       :  0.012410410 /  0.005000000
+ Elem1/Elem2 :  0.111992360 /  0.099581950
+ Err	    : 11.731490463
+
+
+
+
+ @WARNING!!! : Hessian element (12 , 31) is not strictly symmetric !
+ D/TOL       :  0.006135700 /  0.005000000
+ Elem1/Elem2 : -0.781203000 / -0.787338700
+ Err	    :  0.782344518
+
+
+
+
+ @WARNING!!! : Hessian element (12 , 32) is not strictly symmetric !
+ D/TOL       : -0.005210000 /  0.005000000
+ Elem1/Elem2 :  0.868551300 /  0.873761300
+ Err	    :  0.598055711
+
+
+
+
+ @WARNING!!! : Hessian element (12 , 44) is not strictly symmetric !
+ D/TOL       : -0.006229600 /  0.005000000
+ Elem1/Elem2 : -1.248528500 / -1.242298900
+ Err	    :  0.500203266
+
+
+
+
+ @WARNING!!! : Hessian element (13 , 10) is not strictly symmetric !
+ D/TOL       :  0.005300900 /  0.005000000
+ Elem1/Elem2 :  0.321353200 /  0.316052300
+ Err	    :  1.663274007
+
+
+
+
+ @WARNING!!! : Hessian element (13 , 14) is not strictly symmetric !
+ D/TOL       : -0.011352000 /  0.005000000
+ Elem1/Elem2 :  2.157745000 /  2.169097000
+ Err	    :  0.524724499
+
+
+
+
+ @WARNING!!! : Hessian element (13 , 31) is not strictly symmetric !
+ D/TOL       :  0.010828000 /  0.005000000
+ Elem1/Elem2 : -4.119340000 / -4.130168000
+ Err	    :  0.262512625
+
+
+
+
+ @WARNING!!! : Hessian element (13 , 32) is not strictly symmetric !
+ D/TOL       :  0.005963800 /  0.005000000
+ Elem1/Elem2 : -1.459776900 / -1.465740700
+ Err	    :  0.407709050
+
+
+
+
+ @WARNING!!! : Hessian element (13 , 33) is not strictly symmetric !
+ D/TOL       : -0.008179000 /  0.005000000
+ Elem1/Elem2 :  2.475165000 /  2.483344000
+ Err	    :  0.329897556
+
+
+
+
+ @WARNING!!! : Hessian element (13 , 34) is not strictly symmetric !
+ D/TOL       :  0.009594000 /  0.005000000
+ Elem1/Elem2 : -5.816629000 / -5.826223000
+ Err	    :  0.164804981
+
+
+
+
+ @WARNING!!! : Hessian element (13 , 36) is not strictly symmetric !
+ D/TOL       :  0.011990700 /  0.005000000
+ Elem1/Elem2 : -1.162529100 / -1.174519800
+ Err	    :  1.026140275
+
+
+
+
+ @WARNING!!! : Hessian element (14 , 13) is not strictly symmetric !
+ D/TOL       :  0.011352000 /  0.005000000
+ Elem1/Elem2 :  2.169097000 /  2.157745000
+ Err	    :  0.524724499
+
+
+
+
+ @WARNING!!! : Hessian element (15 , 34) is not strictly symmetric !
+ D/TOL       : -0.007809900 /  0.005000000
+ Elem1/Elem2 : -1.417681200 / -1.409871300
+ Err	    :  0.552414146
+
+
+
+
+ @WARNING!!! : Hessian element (17 , 35) is not strictly symmetric !
+ D/TOL       :  0.005340000 /  0.005000000
+ Elem1/Elem2 : -3.774197000 / -3.779537000
+ Err	    :  0.141387028
+
+
+
+
+ @WARNING!!! : Hessian element (19 , 20) is not strictly symmetric !
+ D/TOL       :  0.005101700 /  0.005000000
+ Elem1/Elem2 :  1.009974100 /  1.004872400
+ Err	    :  0.506410786
+
+
+
+
+ @WARNING!!! : Hessian element (19 , 21) is not strictly symmetric !
+ D/TOL       : -0.006057300 /  0.005000000
+ Elem1/Elem2 : -1.152964300 / -1.146907000
+ Err	    :  0.526751214
+
+
+
+
+ @WARNING!!! : Hessian element (19 , 35) is not strictly symmetric !
+ D/TOL       : -0.006510300 /  0.005000000
+ Elem1/Elem2 : -0.736008200 / -0.729497900
+ Err	    :  0.888471225
+
+
+
+
+ @WARNING!!! : Hessian element (20 , 19) is not strictly symmetric !
+ D/TOL       : -0.005101700 /  0.005000000
+ Elem1/Elem2 :  1.004872400 /  1.009974100
+ Err	    :  0.506410786
+
+
+
+
+ @WARNING!!! : Hessian element (20 , 21) is not strictly symmetric !
+ D/TOL       :  0.007602580 /  0.005000000
+ Elem1/Elem2 : -0.110733400 / -0.118335980
+ Err	    :  6.637796811
+
+
+
+
+ @WARNING!!! : Hessian element (20 , 39) is not strictly symmetric !
+ D/TOL       : -0.014876000 /  0.005000000
+ Elem1/Elem2 : -1.221516100 / -1.206640100
+ Err	    :  1.225291849
+
+
+
+
+ @WARNING!!! : Hessian element (21 , 19) is not strictly symmetric !
+ D/TOL       :  0.006057300 /  0.005000000
+ Elem1/Elem2 : -1.146907000 / -1.152964300
+ Err	    :  0.526751214
+
+
+
+
+ @WARNING!!! : Hessian element (21 , 20) is not strictly symmetric !
+ D/TOL       : -0.007602580 /  0.005000000
+ Elem1/Elem2 : -0.118335980 / -0.110733400
+ Err	    :  6.637796811
+
+
+
+
+ @WARNING!!! : Hessian element (21 , 38) is not strictly symmetric !
+ D/TOL       :  0.010047100 /  0.005000000
+ Elem1/Elem2 : -1.512931600 / -1.522978700
+ Err	    :  0.661883851
+
+
+
+
+ @WARNING!!! : Hessian element (22 , 38) is not strictly symmetric !
+ D/TOL       : -0.005910400 /  0.005000000
+ Elem1/Elem2 :  1.086585500 /  1.092495900
+ Err	    :  0.542467115
+
+
+
+
+ @WARNING!!! : Hessian element (24 , 37) is not strictly symmetric !
+ D/TOL       : -0.005359700 /  0.005000000
+ Elem1/Elem2 : -1.705219700 / -1.699860000
+ Err	    :  0.314806141
+
+
+
+
+ @WARNING!!! : Hessian element (25 , 26) is not strictly symmetric !
+ D/TOL       : -0.006333300 /  0.005000000
+ Elem1/Elem2 :  1.788177800 /  1.794511100
+ Err	    :  0.353550095
+
+
+
+
+ @WARNING!!! : Hessian element (25 , 42) is not strictly symmetric !
+ D/TOL       : -0.009093000 /  0.005000000
+ Elem1/Elem2 :  1.036030200 /  1.045123200
+ Err	    :  0.873842361
+
+
+
+
+ @WARNING!!! : Hessian element (26 , 25) is not strictly symmetric !
+ D/TOL       :  0.006333300 /  0.005000000
+ Elem1/Elem2 :  1.794511100 /  1.788177800
+ Err	    :  0.353550095
+
+
+
+
+ @WARNING!!! : Hessian element (26 , 43) is not strictly symmetric !
+ D/TOL       : -0.006846400 /  0.005000000
+ Elem1/Elem2 : -1.169662000 / -1.162815600
+ Err	    :  0.587049582
+
+
+
+
+ @WARNING!!! : Hessian element (27 , 40) is not strictly symmetric !
+ D/TOL       :  0.006985500 /  0.005000000
+ Elem1/Elem2 :  1.287030100 /  1.280044600
+ Err	    :  0.544238156
+
+
+
+
+ @WARNING!!! : Hessian element (28 , 29) is not strictly symmetric !
+ D/TOL       : -0.010956000 /  0.005000000
+ Elem1/Elem2 : -2.571466000 / -2.560510000
+ Err	    :  0.426970040
+
+
+
+
+ @WARNING!!! : Hessian element (28 , 32) is not strictly symmetric !
+ D/TOL       :  0.008128000 /  0.005000000
+ Elem1/Elem2 :  1.848332100 /  1.840204100
+ Err	    :  0.440716835
+
+
+
+
+ @WARNING!!! : Hessian element (28 , 45) is not strictly symmetric !
+ D/TOL       : -0.005962900 /  0.005000000
+ Elem1/Elem2 : -1.664580400 / -1.658617500
+ Err	    :  0.358865176
+
+
+
+
+ @WARNING!!! : Hessian element (29 , 28) is not strictly symmetric !
+ D/TOL       :  0.010956000 /  0.005000000
+ Elem1/Elem2 : -2.560510000 / -2.571466000
+ Err	    :  0.426970040
+
+
+
+
+ @WARNING!!! : Hessian element (29 , 30) is not strictly symmetric !
+ D/TOL       : -0.007679200 /  0.005000000
+ Elem1/Elem2 : -0.579491500 / -0.571812300
+ Err	    :  1.334000635
+
+
+
+
+ @WARNING!!! : Hessian element (29 , 31) is not strictly symmetric !
+ D/TOL       : -0.009746200 /  0.005000000
+ Elem1/Elem2 :  1.946735300 /  1.956481500
+ Err	    :  0.499393218
+
+
+
+
+ @WARNING!!! : Hessian element (29 , 33) is not strictly symmetric !
+ D/TOL       :  0.006919600 /  0.005000000
+ Elem1/Elem2 : -0.969346800 / -0.976266400
+ Err	    :  0.711302740
+
+
+
+
+ @WARNING!!! : Hessian element (30 , 29) is not strictly symmetric !
+ D/TOL       :  0.007679200 /  0.005000000
+ Elem1/Elem2 : -0.571812300 / -0.579491500
+ Err	    :  1.334000635
+
+
+
+
+ @WARNING!!! : Hessian element (30 , 43) is not strictly symmetric !
+ D/TOL       :  0.005378600 /  0.005000000
+ Elem1/Elem2 : -1.771476100 / -1.776854700
+ Err	    :  0.303162264
+
+
+
+
+ @WARNING!!! : Hessian element (30 , 44) is not strictly symmetric !
+ D/TOL       : -0.006131000 /  0.005000000
+ Elem1/Elem2 :  2.438156000 /  2.444287000
+ Err	    :  0.251144765
+
+
+
+
+ @WARNING!!! : Hessian element (31 , 12) is not strictly symmetric !
+ D/TOL       : -0.006135700 /  0.005000000
+ Elem1/Elem2 : -0.787338700 / -0.781203000
+ Err	    :  0.782344518
+
+
+
+
+ @WARNING!!! : Hessian element (31 , 13) is not strictly symmetric !
+ D/TOL       : -0.010828000 /  0.005000000
+ Elem1/Elem2 : -4.130168000 / -4.119340000
+ Err	    :  0.262512625
+
+
+
+
+ @WARNING!!! : Hessian element (31 , 29) is not strictly symmetric !
+ D/TOL       :  0.009746200 /  0.005000000
+ Elem1/Elem2 :  1.956481500 /  1.946735300
+ Err	    :  0.499393218
+
+
+
+
+ @WARNING!!! : Hessian element (31 , 32) is not strictly symmetric !
+ D/TOL       : -0.013727420 /  0.005000000
+ Elem1/Elem2 :  0.944546480 /  0.958273900
+ Err	    :  1.442849798
+
+
+
+
+ @WARNING!!! : Hessian element (31 , 33) is not strictly symmetric !
+ D/TOL       :  0.011461629 /  0.005000000
+ Elem1/Elem2 :  0.849621929 /  0.838160300
+ Err	    :  1.358188136
+
+
+
+
+ @WARNING!!! : Hessian element (32 , 12) is not strictly symmetric !
+ D/TOL       :  0.005210000 /  0.005000000
+ Elem1/Elem2 :  0.873761300 /  0.868551300
+ Err	    :  0.598055711
+
+
+
+
+ @WARNING!!! : Hessian element (32 , 13) is not strictly symmetric !
+ D/TOL       : -0.005963800 /  0.005000000
+ Elem1/Elem2 : -1.465740700 / -1.459776900
+ Err	    :  0.407709050
+
+
+
+
+ @WARNING!!! : Hessian element (32 , 28) is not strictly symmetric !
+ D/TOL       : -0.008128000 /  0.005000000
+ Elem1/Elem2 :  1.840204100 /  1.848332100
+ Err	    :  0.440716835
+
+
+
+
+ @WARNING!!! : Hessian element (32 , 31) is not strictly symmetric !
+ D/TOL       :  0.013727420 /  0.005000000
+ Elem1/Elem2 :  0.958273900 /  0.944546480
+ Err	    :  1.442849798
+
+
+
+
+ @WARNING!!! : Hessian element (32 , 33) is not strictly symmetric !
+ D/TOL       : -0.016613600 /  0.005000000
+ Elem1/Elem2 :  1.091989300 /  1.108602900
+ Err	    :  1.509920829
+
+
+
+
+ @WARNING!!! : Hessian element (33 , 10) is not strictly symmetric !
+ D/TOL       :  0.006984000 /  0.005000000
+ Elem1/Elem2 : -0.576441300 / -0.583425300
+ Err	    :  1.204276423
+
+
+
+
+ @WARNING!!! : Hessian element (33 , 11) is not strictly symmetric !
+ D/TOL       : -0.008392100 /  0.005000000
+ Elem1/Elem2 :  0.781664500 /  0.790056600
+ Err	    :  1.067886663
+
+
+
+
+ @WARNING!!! : Hessian element (33 , 13) is not strictly symmetric !
+ D/TOL       :  0.008179000 /  0.005000000
+ Elem1/Elem2 :  2.483344000 /  2.475165000
+ Err	    :  0.329897556
+
+
+
+
+ @WARNING!!! : Hessian element (33 , 29) is not strictly symmetric !
+ D/TOL       : -0.006919600 /  0.005000000
+ Elem1/Elem2 : -0.976266400 / -0.969346800
+ Err	    :  0.711302740
+
+
+
+
+ @WARNING!!! : Hessian element (33 , 31) is not strictly symmetric !
+ D/TOL       : -0.011461629 /  0.005000000
+ Elem1/Elem2 :  0.838160300 /  0.849621929
+ Err	    :  1.358188136
+
+
+
+
+ @WARNING!!! : Hessian element (33 , 32) is not strictly symmetric !
+ D/TOL       :  0.016613600 /  0.005000000
+ Elem1/Elem2 :  1.108602900 /  1.091989300
+ Err	    :  1.509920829
+
+
+
+
+ @WARNING!!! : Hessian element (34 , 13) is not strictly symmetric !
+ D/TOL       : -0.009594000 /  0.005000000
+ Elem1/Elem2 : -5.826223000 / -5.816629000
+ Err	    :  0.164804981
+
+
+
+
+ @WARNING!!! : Hessian element (34 , 15) is not strictly symmetric !
+ D/TOL       :  0.007809900 /  0.005000000
+ Elem1/Elem2 : -1.409871300 / -1.417681200
+ Err	    :  0.552414146
+
+
+
+
  @WARNING!!! : Hessian element (34 , 36) is not strictly symmetric !
- D/TOL       : -0.005058200 /  0.005000000
- Elem1/Elem2 : -0.572198400 / -0.567140200
- Err	    :  0.887918657
+ D/TOL       : -0.020850850 /  0.005000000
+ Elem1/Elem2 : -0.573872550 / -0.553021700
+ Err	    :  3.700586812
+
+
+
+
+ @WARNING!!! : Hessian element (35 ,  3) is not strictly symmetric !
+ D/TOL       : -0.010903000 /  0.005000000
+ Elem1/Elem2 : -2.668807000 / -2.657904000
+ Err	    :  0.409370811
+
+
+
+
+ @WARNING!!! : Hessian element (35 , 17) is not strictly symmetric !
+ D/TOL       : -0.005340000 /  0.005000000
+ Elem1/Elem2 : -3.779537000 / -3.774197000
+ Err	    :  0.141387028
+
+
+
+
+ @WARNING!!! : Hessian element (35 , 19) is not strictly symmetric !
+ D/TOL       :  0.006510300 /  0.005000000
+ Elem1/Elem2 : -0.729497900 / -0.736008200
+ Err	    :  0.888471225
+
+
+
+
+ @WARNING!!! : Hessian element (35 , 36) is not strictly symmetric !
+ D/TOL       :  0.011833300 /  0.005000000
+ Elem1/Elem2 : -1.146875300 / -1.158708600
+ Err	    :  1.026490513
+
+
+
+
+ @WARNING!!! : Hessian element (36 ,  2) is not strictly symmetric !
+ D/TOL       :  0.006364000 /  0.005000000
+ Elem1/Elem2 : -2.682916000 / -2.689280000
+ Err	    :  0.236923597
+
+
+
+
+ @WARNING!!! : Hessian element (36 ,  3) is not strictly symmetric !
+ D/TOL       : -0.006902000 /  0.005000000
+ Elem1/Elem2 : -6.933730000 / -6.926828000
+ Err	    :  0.099591950
+
+
+
+
+ @WARNING!!! : Hessian element (36 , 13) is not strictly symmetric !
+ D/TOL       : -0.011990700 /  0.005000000
+ Elem1/Elem2 : -1.174519800 / -1.162529100
+ Err	    :  1.026140275
 
 
 
 
  @WARNING!!! : Hessian element (36 , 34) is not strictly symmetric !
- D/TOL       :  0.005058200 /  0.005000000
- Elem1/Elem2 : -0.567140200 / -0.572198400
- Err	    :  0.887918657
+ D/TOL       :  0.020850850 /  0.005000000
+ Elem1/Elem2 : -0.553021700 / -0.573872550
+ Err	    :  3.700586812
+
+
+
+
+ @WARNING!!! : Hessian element (36 , 35) is not strictly symmetric !
+ D/TOL       : -0.011833300 /  0.005000000
+ Elem1/Elem2 : -1.158708600 / -1.146875300
+ Err	    :  1.026490513
+
+
+
+
+ @WARNING!!! : Hessian element (37 ,  3) is not strictly symmetric !
+ D/TOL       :  0.005985500 /  0.005000000
+ Elem1/Elem2 :  1.089347600 /  1.083362100
+ Err	    :  0.550970983
+
+
+
+
+ @WARNING!!! : Hessian element (37 ,  8) is not strictly symmetric !
+ D/TOL       : -0.008360500 /  0.005000000
+ Elem1/Elem2 :  1.015262200 /  1.023622700
+ Err	    :  0.820105147
+
+
+
+
+ @WARNING!!! : Hessian element (37 , 24) is not strictly symmetric !
+ D/TOL       :  0.005359700 /  0.005000000
+ Elem1/Elem2 : -1.699860000 / -1.705219700
+ Err	    :  0.314806141
+
+
+
+
+ @WARNING!!! : Hessian element (37 , 38) is not strictly symmetric !
+ D/TOL       :  0.019499000 /  0.005000000
+ Elem1/Elem2 : -2.667735000 / -2.687234000
+ Err	    :  0.728258184
+
+
+
+
+ @WARNING!!! : Hessian element (37 , 39) is not strictly symmetric !
+ D/TOL       : -0.016645790 /  0.005000000
+ Elem1/Elem2 : -0.631206700 / -0.614560910
+ Err	    :  2.672374826
+
+
+
+
+ @WARNING!!! : Hessian element (38 ,  3) is not strictly symmetric !
+ D/TOL       :  0.005477600 /  0.005000000
+ Elem1/Elem2 :  1.629403900 /  1.623926300
+ Err	    :  0.336738029
+
+
+
+
+ @WARNING!!! : Hessian element (38 ,  7) is not strictly symmetric !
+ D/TOL       :  0.010473000 /  0.005000000
+ Elem1/Elem2 :  1.509972900 /  1.499499900
+ Err	    :  0.696002303
+
+
+
+
+ @WARNING!!! : Hessian element (38 , 21) is not strictly symmetric !
+ D/TOL       : -0.010047100 /  0.005000000
+ Elem1/Elem2 : -1.522978700 / -1.512931600
+ Err	    :  0.661883851
+
+
+
+
+ @WARNING!!! : Hessian element (38 , 22) is not strictly symmetric !
+ D/TOL       :  0.005910400 /  0.005000000
+ Elem1/Elem2 :  1.092495900 /  1.086585500
+ Err	    :  0.542467115
+
+
+
+
+ @WARNING!!! : Hessian element (38 , 37) is not strictly symmetric !
+ D/TOL       : -0.019499000 /  0.005000000
+ Elem1/Elem2 : -2.687234000 / -2.667735000
+ Err	    :  0.728258184
+
+
+
+
+ @WARNING!!! : Hessian element (38 , 39) is not strictly symmetric !
+ D/TOL       :  0.007490790 /  0.005000000
+ Elem1/Elem2 : -0.189845110 / -0.197335900
+ Err	    :  3.869399483
+
+
+
+
+ @WARNING!!! : Hessian element (39 ,  3) is not strictly symmetric !
+ D/TOL       : -0.007751000 /  0.005000000
+ Elem1/Elem2 : -2.618865000 / -2.611114000
+ Err	    :  0.296406544
+
+
+
+
+ @WARNING!!! : Hessian element (39 , 20) is not strictly symmetric !
+ D/TOL       :  0.014876000 /  0.005000000
+ Elem1/Elem2 : -1.206640100 / -1.221516100
+ Err	    :  1.225291849
+
+
+
+
+ @WARNING!!! : Hessian element (39 , 37) is not strictly symmetric !
+ D/TOL       :  0.016645790 /  0.005000000
+ Elem1/Elem2 : -0.614560910 / -0.631206700
+ Err	    :  2.672374826
+
+
+
+
+ @WARNING!!! : Hessian element (39 , 38) is not strictly symmetric !
+ D/TOL       : -0.007490790 /  0.005000000
+ Elem1/Elem2 : -0.197335900 / -0.189845110
+ Err	    :  3.869399483
+
+
+
+
+ @WARNING!!! : Hessian element (40 ,  4) is not strictly symmetric !
+ D/TOL       : -0.005488000 /  0.005000000
+ Elem1/Elem2 : -3.313724000 / -3.308236000
+ Err	    :  0.165751530
+
+
+
+
+ @WARNING!!! : Hessian element (40 , 27) is not strictly symmetric !
+ D/TOL       : -0.006985500 /  0.005000000
+ Elem1/Elem2 :  1.280044600 /  1.287030100
+ Err	    :  0.544238156
+
+
+
+
+ @WARNING!!! : Hessian element (40 , 41) is not strictly symmetric !
+ D/TOL       : -0.007977000 /  0.005000000
+ Elem1/Elem2 :  0.710856900 /  0.718833900
+ Err	    :  1.115905621
+
+
+
+
+ @WARNING!!! : Hessian element (40 , 42) is not strictly symmetric !
+ D/TOL       :  0.005231780 /  0.005000000
+ Elem1/Elem2 : -0.270781900 / -0.276013680
+ Err	    :  1.913614591
+
+
+
+
+ @WARNING!!! : Hessian element (41 ,  9) is not strictly symmetric !
+ D/TOL       :  0.006730000 /  0.005000000
+ Elem1/Elem2 : -3.006218000 / -3.012948000
+ Err	    :  0.223619020
+
+
+
+
+ @WARNING!!! : Hessian element (41 , 40) is not strictly symmetric !
+ D/TOL       :  0.007977000 /  0.005000000
+ Elem1/Elem2 :  0.718833900 /  0.710856900
+ Err	    :  1.115905621
+
+
+
+
+ @WARNING!!! : Hessian element (41 , 42) is not strictly symmetric !
+ D/TOL       : -0.013295700 /  0.005000000
+ Elem1/Elem2 :  1.488612800 /  1.501908500
+ Err	    :  0.889189453
+
+
+
+
+ @WARNING!!! : Hessian element (42 ,  4) is not strictly symmetric !
+ D/TOL       : -0.006549500 /  0.005000000
+ Elem1/Elem2 : -1.949627300 / -1.943077800
+ Err	    :  0.336501216
+
+
+
+
+ @WARNING!!! : Hessian element (42 ,  8) is not strictly symmetric !
+ D/TOL       : -0.007132000 /  0.005000000
+ Elem1/Elem2 : -3.047221000 / -3.040089000
+ Err	    :  0.234323535
+
+
+
+
+ @WARNING!!! : Hessian element (42 , 25) is not strictly symmetric !
+ D/TOL       :  0.009093000 /  0.005000000
+ Elem1/Elem2 :  1.045123200 /  1.036030200
+ Err	    :  0.873842361
+
+
+
+
+ @WARNING!!! : Hessian element (42 , 40) is not strictly symmetric !
+ D/TOL       : -0.005231780 /  0.005000000
+ Elem1/Elem2 : -0.276013680 / -0.270781900
+ Err	    :  1.913614591
+
+
+
+
+ @WARNING!!! : Hessian element (42 , 41) is not strictly symmetric !
+ D/TOL       :  0.013295700 /  0.005000000
+ Elem1/Elem2 :  1.501908500 /  1.488612800
+ Err	    :  0.889189453
+
+
+
+
+ @WARNING!!! : Hessian element (43 ,  4) is not strictly symmetric !
+ D/TOL       : -0.006052000 /  0.005000000
+ Elem1/Elem2 : -5.779881000 / -5.773829000
+ Err	    :  0.104762886
+
+
+
+
+ @WARNING!!! : Hessian element (43 ,  6) is not strictly symmetric !
+ D/TOL       : -0.008699000 /  0.005000000
+ Elem1/Elem2 :  2.588261000 /  2.596960000
+ Err	    :  0.335530540
+
+
+
+
+ @WARNING!!! : Hessian element (43 , 11) is not strictly symmetric !
+ D/TOL       :  0.008319400 /  0.005000000
+ Elem1/Elem2 :  1.443822400 /  1.435503000
+ Err	    :  0.577871469
+
+
+
+
+ @WARNING!!! : Hessian element (43 , 26) is not strictly symmetric !
+ D/TOL       :  0.006846400 /  0.005000000
+ Elem1/Elem2 : -1.162815600 / -1.169662000
+ Err	    :  0.587049582
+
+
+
+
+ @WARNING!!! : Hessian element (43 , 30) is not strictly symmetric !
+ D/TOL       : -0.005378600 /  0.005000000
+ Elem1/Elem2 : -1.776854700 / -1.771476100
+ Err	    :  0.303162264
+
+
+
+
+ @WARNING!!! : Hessian element (43 , 44) is not strictly symmetric !
+ D/TOL       : -0.014362900 /  0.005000000
+ Elem1/Elem2 : -1.302532400 / -1.288169500
+ Err	    :  1.108803757
+
+
+
+
+ @WARNING!!! : Hessian element (43 , 45) is not strictly symmetric !
+ D/TOL       :  0.015729600 /  0.005000000
+ Elem1/Elem2 :  1.684431700 /  1.668702100
+ Err	    :  0.938202943
+
+
+
+
+ @WARNING!!! : Hessian element (44 , 10) is not strictly symmetric !
+ D/TOL       : -0.005821600 /  0.005000000
+ Elem1/Elem2 :  1.663506500 /  1.669328100
+ Err	    :  0.349348269
+
+
+
+
+ @WARNING!!! : Hessian element (44 , 11) is not strictly symmetric !
+ D/TOL       : -0.006021000 /  0.005000000
+ Elem1/Elem2 : -4.416227000 / -4.410206000
+ Err	    :  0.136431104
+
+
+
+
+ @WARNING!!! : Hessian element (44 , 12) is not strictly symmetric !
+ D/TOL       :  0.006229600 /  0.005000000
+ Elem1/Elem2 : -1.242298900 / -1.248528500
+ Err	    :  0.500203266
+
+
+
+
+ @WARNING!!! : Hessian element (44 , 30) is not strictly symmetric !
+ D/TOL       :  0.006131000 /  0.005000000
+ Elem1/Elem2 :  2.444287000 /  2.438156000
+ Err	    :  0.251144765
+
+
+
+
+ @WARNING!!! : Hessian element (44 , 43) is not strictly symmetric !
+ D/TOL       :  0.014362900 /  0.005000000
+ Elem1/Elem2 : -1.288169500 / -1.302532400
+ Err	    :  1.108803757
+
+
+
+
+ @WARNING!!! : Hessian element (44 , 45) is not strictly symmetric !
+ D/TOL       : -0.008313600 /  0.005000000
+ Elem1/Elem2 : -0.379752900 / -0.371439300
+ Err	    :  2.213441513
+
+
+
+
+ @WARNING!!! : Hessian element (45 ,  4) is not strictly symmetric !
+ D/TOL       :  0.012709000 /  0.005000000
+ Elem1/Elem2 :  2.537351000 /  2.524642000
+ Err	    :  0.502134238
+
+
+
+
+ @WARNING!!! : Hessian element (45 , 11) is not strictly symmetric !
+ D/TOL       : -0.009081100 /  0.005000000
+ Elem1/Elem2 : -1.313946800 / -1.304865700
+ Err	    :  0.693528078
+
+
+
+
+ @WARNING!!! : Hessian element (45 , 28) is not strictly symmetric !
+ D/TOL       :  0.005962900 /  0.005000000
+ Elem1/Elem2 : -1.658617500 / -1.664580400
+ Err	    :  0.358865176
+
+
+
+
+ @WARNING!!! : Hessian element (45 , 43) is not strictly symmetric !
+ D/TOL       : -0.015729600 /  0.005000000
+ Elem1/Elem2 :  1.668702100 /  1.684431700
+ Err	    :  0.938202943
+
+
+
+
+ @WARNING!!! : Hessian element (45 , 44) is not strictly symmetric !
+ D/TOL       :  0.008313600 /  0.005000000
+ Elem1/Elem2 : -0.371439300 / -0.379752900
+ Err	    :  2.213441513
 
 
  Normal Mode Frequencies ( Translational / Rotational Motions are projected out )
  Mode     Freq ( cm**-1 ) ... results computed by interal hessian matrix
 --------------------------------------------------------------------------------------
- 01       590.800504
- 02       579.312790
- 03       554.456924
- 04       553.294585
- 05       525.330300
- 06       522.872946
- 07       516.802456
- 08       498.918926
- 09       493.133446
- 10       492.039325
- 11       482.705919
- 12       469.072944
- 13       474.274186
- 14       448.707052
- 15       372.588576
- 16       328.061217
- 17       325.217342
- 18       309.423156
- 19       303.642896
- 20       295.111306
- 21       274.075504
- 22       270.512768
- 23       262.191979
- 24       257.824357
- 25       234.518212
- 26       211.497489
- 27       210.734655
- 28       202.974087
- 29       189.459222
- 30       161.507650
- 31       152.379129
- 32       154.043085
- 33       129.590196
- 34       122.896880
- 35       105.063282
- 36        81.980371
- 37        86.204363
- 38        49.828396
- 39        37.065640
- 40        -3.345681
- 41         2.039234
- 42         4.663735
- 43         9.925583
- 44         8.384747
- 45         9.064769
+ 01       592.555493
+ 02       581.587924
+ 03       556.778886
+ 04       555.441746
+ 05       527.648322
+ 06       524.280398
+ 07       518.719077
+ 08       501.629635
+ 09       450.247053
+ 10       470.497675
+ 11       475.717313
+ 12       484.820411
+ 13       494.757257
+ 14       493.913719
+ 15       374.016592
+ 16       328.836574
+ 17       326.449631
+ 18       309.726720
+ 19       303.765714
+ 20       295.033719
+ 21       274.303809
+ 22       271.134886
+ 23       262.678490
+ 24       258.080941
+ 25       234.711073
+ 26       211.462202
+ 27       211.014268
+ 28       202.793094
+ 29       189.305610
+ 30       161.159898
+ 31       152.093689
+ 32       153.638645
+ 33       122.619828
+ 34       129.156722
+ 35       104.440509
+ 36        81.633570
+ 37        86.210016
+ 38        48.232094
+ 39        36.509597
+ 40         8.419387
+ 41         5.110081
+ 42         3.772000
+ 43         1.888522
+ 44        -5.092687
+ 45        -3.942511
 --------------------------------------------------------------------------------------
 
  Moment of inertia tensor ( u.Angs^2 )
@@ -145,13 +1297,13 @@ Pb      3.667936    5.152243    1.837798
 	     x       y      z
 --------------------------------------------------------------------------------------
    x  6795.350     0.000     0.000
-   y     0.000  4693.025     0.000
-   z     0.000     0.000  5191.757
+   y     0.000  4693.026     0.000
+   z     0.000     0.000  5191.756
 --------------------------------------------------------------------------------------
  Centre of mass (Ang) =     2.6672    2.7218    2.1587
 --------------------------------------------------------------------------------------
  Calculation is finished : 
- 2021-01-26 12:32:01
+ 2022-02-04 05:36:29
  Terminating Normal Mode Calculator
 --------------------------------------------------------------------------------------
 ######################################################################################

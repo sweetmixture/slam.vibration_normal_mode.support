@@ -1,13 +1,13 @@
 QM_PFT  2
 F       122.   0.089
-Pb      422.   422.0   0.098   0.098
+Pb      422.   0.098
 ATFM_TYPE 2
 SHELL   F       0.59    -1.59   20.77   0.
 SP      Pb      3.64    -1.64   14.09
 MM_PFT  2
 SHELL   F       SHELL   F       1127.7  0.2753   -15.83
 SP      Pb      SHELL   F       4494.   0.264   -20.4
-gnorm_tol 0.000010
+gnorm_tol 0.000025
 log_limit
 
 

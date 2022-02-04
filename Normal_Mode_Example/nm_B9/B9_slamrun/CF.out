@@ -1,0 +1,145 @@
+############################################################
+#                                                          #
+#                     COMPARE CLUSTERS                     #
+#                                                          #
+#                     Python Version 1                     #
+#                        23.01.2020                        #
+#                                                          #
+#                     Scott M Woodley                      #
+#                       Woongkyu Jee                       #
+#                                                          #
+############################################################
+============================================================
+                                                            
+ RESULTS FROM COMPARING CLUSTERS                            
+                                                            
+ Using recentred / rotated structural data                  
+                                                            
+ CLUSTER FILE INPUTS :
+                                                            
+ CLUSTER 1 :  B9.xyz
+ CLUSTER 2 :  out.xyz
+                                                            
+============================================================
+                                                            
+ Degeneracy in the pricipal moment of inertia :  1         
+                                                            
+ Principal Moment of Inertia
+                                                            
+ CLUSTER 1 :    70.630979   72.273223   94.774552
+ CLUSTER 2 :    59.270095   63.903668   77.889677
+                                                            
+ RMS PMOI  :     0.488999
+                                                            
+============================================================
+                                                            
+ Final Cluster Configurations ( Recentred / Rotated ) 
+                                                            
+ CLUSTER 1 :
+                                                            
+  F    0.217348   -0.000522    0.422003
+  F    0.795273    2.961350    1.545633
+  F   -0.070865    2.209989   -1.130307
+  F    3.600638   -0.010281    0.388568
+  F   -0.083544   -2.209655   -1.129912
+  F   -2.031982    0.006034    2.261195
+  F   -2.617743   -1.522291   -0.964961
+  F    1.621899   -0.004845   -1.826538
+  F   -2.608912    1.536600   -0.964351
+  F    0.777675   -2.965416    1.546278
+ Pb   -0.969761    0.002625   -1.966827
+ Pb   -1.404148   -2.004253    1.045400
+ Pb    2.077852   -1.807343   -0.135482
+ Pb   -1.392107    2.012564    1.045454
+ Pb    2.088378    1.795446   -0.136152
+                                                            
+ CLUSTER 2 :
+                                                            
+  F   -0.222777    0.000042    0.280927
+  F    0.731365    2.281422    1.499363
+  F    0.154648    2.076885   -1.180812
+  F    2.776798   -0.000034    0.955716
+  F    0.154476   -2.076398   -1.180924
+  F   -2.120125   -0.000996    2.016078
+  F   -2.316216   -1.364296   -0.998079
+  F    1.814475    0.000255   -1.545365
+  F   -2.316163    1.365078   -0.997208
+  F    0.731799   -2.281810    1.498795
+ Pb   -0.783980    0.000675   -1.985515
+ Pb   -1.437223   -1.891633    0.980921
+ Pb    2.135438   -1.832139   -0.163490
+ Pb   -1.437719    1.890581    0.982497
+ Pb    2.135205    1.832370   -0.162904
+                                                            
+ RMS CONFIG:     0.037201
+                                                            
+============================================================
+                                                            
+ Scaling Factor
+                                                            
+ Calculating optimised expansion coefficient (Etha)
+ on 'cluster 2' with respect to 'cluster 1'
+                                                            
+ ( Etha          )(x2)   (x1)
+ (      Etha     )(y2) = (y1)  Find optimised 'Etha' value
+ (          Etha )(z2)   (z1)
+                                                            
+ Scaling Factor(Etha) Optimisation Log 
+                                                            
+  Cycle:   1  Gnorm:    16.834652  Etha:     1.000000
+  Cycle:   5  Gnorm:    11.901534  Etha:     1.024535
+  Cycle:   9  Gnorm:     8.413985  Etha:     1.041881
+  Cycle:  13  Gnorm:     5.948405  Etha:     1.054143
+  Cycle:  17  Gnorm:     4.205322  Etha:     1.062813
+  Cycle:  21  Gnorm:     2.973022  Etha:     1.068942
+  Cycle:  25  Gnorm:     2.101826  Etha:     1.073275
+  Cycle:  29  Gnorm:     1.485921  Etha:     1.076338
+  Cycle:  33  Gnorm:     1.050496  Etha:     1.078503
+  Cycle:  37  Gnorm:     0.742665  Etha:     1.080034
+  Cycle:  41  Gnorm:     0.525040  Etha:     1.081117
+  Cycle:  45  Gnorm:     0.371185  Etha:     1.081882
+  Cycle:  49  Gnorm:     0.262416  Etha:     1.082423
+  Cycle:  53  Gnorm:     0.185519  Etha:     1.082805
+  Cycle:  57  Gnorm:     0.131156  Etha:     1.083076
+  Cycle:  61  Gnorm:     0.092723  Etha:     1.083267
+  Cycle:  65  Gnorm:     0.065552  Etha:     1.083402
+  Cycle:  69  Gnorm:     0.046343  Etha:     1.083498
+  Cycle:  73  Gnorm:     0.032763  Etha:     1.083565
+  Cycle:  77  Gnorm:     0.023162  Etha:     1.083613
+  Cycle:  81  Gnorm:     0.016375  Etha:     1.083647
+  Cycle:  85  Gnorm:     0.011577  Etha:     1.083670
+  Cycle:  89  Gnorm:     0.008184  Etha:     1.083687
+  Cycle:  93  Gnorm:     0.005786  Etha:     1.083699
+  Cycle:  97  Gnorm:     0.004090  Etha:     1.083708
+  Cycle: 101  Gnorm:     0.002892  Etha:     1.083714
+  Cycle: 105  Gnorm:     0.002044  Etha:     1.083718
+  Cycle: 109  Gnorm:     0.001445  Etha:     1.083721
+  Cycle: 113  Gnorm:     0.001022  Etha:     1.083723
+  Cycle: 117  Gnorm:     0.000722  Etha:     1.083724
+  Cycle: 121  Gnorm:     0.000511  Etha:     1.083726
+  Cycle: 125  Gnorm:     0.000361  Etha:     1.083726
+  Cycle: 129  Gnorm:     0.000255  Etha:     1.083727
+  Cycle: 133  Gnorm:     0.000180  Etha:     1.083727
+  Cycle: 137  Gnorm:     0.000128  Etha:     1.083727
+  Cycle: 141  Gnorm:     0.000090  Etha:     1.083728
+  Cycle: 145  Gnorm:     0.000064  Etha:     1.083728
+  Cycle: 149  Gnorm:     0.000045  Etha:     1.083728
+  Cycle: 153  Gnorm:     0.000032  Etha:     1.083728
+  Cycle: 157  Gnorm:     0.000023  Etha:     1.083728
+  Cycle: 161  Gnorm:     0.000016  Etha:     1.083728
+  Cycle: 165  Gnorm:     0.000011  Etha:     1.083728
+  Cycle: 169  Gnorm:     0.000008  Etha:     1.083728
+  Cycle: 173  Gnorm:     0.000006  Etha:     1.083728
+  Cycle: 177  Gnorm:     0.000004  Etha:     1.083728
+  Cycle: 181  Gnorm:     0.000003  Etha:     1.083728
+  Cycle: 185  Gnorm:     0.000002  Etha:     1.083728
+  Cycle: 189  Gnorm:     0.000001  Etha:     1.083728
+                                                            
+ Scaling Factor :     1.083728
+                                                            
+============================================================
+############################################################
+#               COMPLETE SUCCESS - ALL DONE                #
+############################################################
+#             THANK YOU FOR USING CF-CLUSTERS              #
+############################################################

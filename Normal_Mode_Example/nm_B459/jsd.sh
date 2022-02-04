@@ -3,8 +3,8 @@
 #$ -m e
 #$ -M uccawkj@master
 #$ -q all.q
-#$ -N PbF2_f5
+#$ -N PbF2_f5_2
 #$ -pe smp 1
 
 module load intel/2018.3
-bash /home/uccawkj/src_tool/SLAM/slam_vib_package_v_2.2/slam_vib.auto_geo_gen.sh 0.025 > res.out
+bash /home/uccawkj/src_tool/SLAM/slam_vib_package_v_2.2/slam_vib.auto_geo_gen.sh 0.05 > res.out
